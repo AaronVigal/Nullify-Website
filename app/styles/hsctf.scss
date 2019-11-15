@@ -1,0 +1,95 @@
+.pokemon-right {
+  background-image: url('/assets/images/pokemon.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 0px;
+}
+
+.image-overlay {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  margin-top: -22px;
+}
+
+.display-t {
+  color: white;
+}
+
+.display-t h1 {
+  margin-bottom: 20px;
+  font-size: 40px;
+  line-height: 1.5;
+  font-family: "Space Mono", Arial, serif;
+  font-weight: 300;
+}
+
+.display-t h6 {
+  font-family: "Space Mono", Arial, serif;
+}
+
+.circle {
+  background-color: #4F4F51;
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+}
+
+#countdown p {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 2rem;
+}
+
+#countdown .canvas-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  max-width: 440px;
+  margin: 0 auto;
+}
+
+@media (max-width:500px) {
+  #countdown .canvas-container {
+    max-width: 220px;
+  }
+
+  #countdown canvas:nth-child(-n+2) {
+    margin-bottom: 10px;
+  }
+}
+
+.logo {
+	width: 20vw;
+	min-width: 300px;
+	margin-bottom: 30px;
+}
+
+.left-side {
+	margin-top: 50px;
+}
+
+.countdown {
+	padding-top: 15px;
+}
+
+.copyright {
+	color: white;
+	background-color: black;
+	padding: 2px;
+}
+
+.live {
+	margin-top: 50px;
+}
+
+.main {
+	margin: 0px;
+}
+
+.iframe {
+	border-width: 0px; 
+	overflow: hidden;
+}

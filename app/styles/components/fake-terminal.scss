@@ -1,0 +1,155 @@
+@import url('https://fonts.googleapis.com/css?family=Inconsolata');
+
+/* end ./page-wrapper */
+.elem {
+  height: 15px;
+  width: 15px;
+  display: inline-block;
+  background-color: #fff;
+  margin-right: 10px;
+  margin-top: 8px;
+  border-radius: 100%;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #ddd;
+
+  &:first-child {
+    margin-left: 10px;
+  }
+
+  &.elem-close {
+    background-color: #ff5d5b;
+    border-color: #ee4644;
+  }
+
+  &.elem-minimize {
+    background-color: #ffbb46;
+    border-color: #f1ad39;
+  }
+
+  &.elem-fullscreen {
+    background-color: #00c74f;
+    border-color: #01b849;
+  }
+}
+
+.terminal-section {
+  position: relative;
+  display: block;
+}
+
+.terminal-outer {
+  display: block;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+  font-size: 14px;
+  font-weight: thin;
+  font-family: 'Inconsolata', monospace;
+  color: #fff;
+  width: 75%;
+  text-shadow: none;
+  margin-top: 10vh;
+  margin-bottom: 10vh;
+
+  .terminal-container {
+    .terminal-header {
+      background-color: #c5c5c5;
+
+      .terminal-controls {
+        display: inline-block;
+
+        .elem {
+          float: left;
+        }
+      }
+    }
+
+    .terminal-body {
+      background-color: #303030;
+      padding: 10px;
+
+      .terminal-body-inner {
+        min-height: 350px;
+        color: #fff;
+
+        p {
+          margin: 0 0 4px;
+        }
+
+        .terminal-user {
+          margin-right: 0px;
+        }
+      }
+    }
+  }
+}
+
+
+// Typed.js blinking cursor css
+:global(.typed-cursor) {
+  opacity: 1;
+  -webkit-animation: blink 0.7s infinite;
+  -moz-animation: blink 0.7s infinite;
+  animation: blink 0.7s infinite;
+}
+
+
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes blink {
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@-moz-keyframes blink {
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+// Skip button Styling
+.skip-button{
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	color: grey;
+}
+
+.skip-button:hover {
+	color: white;
+}
+
+.append {
+	margin-right: -5px;
+}
+

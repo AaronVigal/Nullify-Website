@@ -1,0 +1,57 @@
+@import 'bower_components/fontawesome/scss/variables';
+@import 'bower_components/fontawesome/scss/path';
+@import 'bower_components/fontawesome/scss/mixins';
+@import 'bower_components/fontawesome/scss/icons';
+
+@import 'addons/ember-calendar/paint-core';
+@import 'addons/ember-calendar/main';
+
+:global(td.fc-today) {
+	background: #91d122 !important;
+}
+
+:global(.as-calendar-occurrence) {
+	background: rgba(39, 150, 60, 0.8) !important;
+	border-left: 2px solid black !important;
+}
+
+:global(.as-calendar-header) {
+	background-color: rgb(34, 34, 34) !important;
+}
+
+:global(.as-calendar) {
+	border: none;
+	border-radius: 10px;
+}
+
+:global(.as-calendar-timetable__row) {
+	background: #303030 !important;
+	border-radius: 10px;
+}
+
+:global(.as-calendar-timetable__row--highlighted) {
+  background: #303030 !important;
+  background-color: #303030 !important;
+  border-radius: 0px;
+}
+
+:global(.as-calendar-timetable ) {
+	border-radius: 10px;
+	background-color: #303030 !important;
+}
+
+:global(ul>li) {
+	border-color: darkgray !important;
+}
+
+:global(.as-calendar-header__nav-group-action) {
+	background-color: #303030 !important;
+}
+
+:global(.as-calendar-header__nav-group-action--current-week) {
+  color: white !important;
+}
+
+:global(.as-calendar-header__nav-group-action--current-week:disabled) {
+  color: grey !important;
+}

@@ -1,0 +1,21 @@
+<div class="container">
+	<div class="row">
+		<div class="col-md-12 pt-5">
+			{{as-calendar
+			  title="Nullify Calendar"
+			  occurrences=events
+			  defaultTimeZoneQuery="New York|London|Dubai|Hong Kong"
+			  dayStartingTime="9:00"
+			  dayEndingTime="21:00"
+			  timeSlotDuration="00:30"
+			  class="fade-in"
+			  onAddOccurrence=(action "false")
+			  onUpdateOccurrence=(action "false")
+			  onRemoveOccurrence=(action "false")
+			  }}
+			  <br><p></p><br>
+		</div>
+	</div>
+</div>
+
+{{liquid-outlet}}

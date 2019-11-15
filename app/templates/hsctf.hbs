@@ -1,0 +1,63 @@
+{{!-- <div class="container">
+	<div class="row">
+		<div class="col-md-12"> --}}
+			{{!-- TODO: Fix this height and fix the countdown column break --}}
+			<div class="row h-100" local-class="main">
+				<div class="col-md text-center my-auto fade-in" local-class="display-t">
+					<img src="/assets/images/hsctf-logo.png" alt="HSCTF Logo" local-class="logo">
+			
+					{{#liquid-if (is-before "11/15/2019")}}
+						<h1>Registration Opens November 15th!</h1>
+						<h6>Join us for NULLIFY's High School capture the flag event - February 8, 2020</h6>
+					{{else}}
+						<h1>Register now to reserve your team!</h1>
+						<h6>Come back on February 8<sup>th</sup>, 2020 for NULLIFY's High School capture the flag event!</h6>
+					{{/liquid-if}}
+					
+			
+					{{#liquid-if showCountdown}}
+						<div class="row justify-content-center" local-class="left-side">
+							<div class="col-md-2">
+								<div local-class="circle" class="rounded-circle">
+									<h1 class="days mb-0" local-class="countdown">{{days}}</h1>
+									<p>Days</p>
+								</div>
+							</div>
+							<div class="col-md-2">
+								<div local-class="circle" class="rounded-circle">
+									<h1 class="hours mb-0" local-class="countdown">{{hours}}</h1>
+									<p>Hours</p>
+								</div>
+							</div>
+							<div class="col-md-2">
+								<div local-class="circle" class="rounded-circle">
+									<h1 class="minutes mb-0" local-class="countdown">{{minutes}}</h1>
+									<p>Minutes</p>
+								</div>
+							</div>
+							<div class="col-md-2">
+								<div local-class="circle" class="rounded-circle">
+									<h1 class="seconds mb-0" local-class="countdown">{{seconds}}</h1>
+									<p>Seconds</p>
+								</div>
+							</div>
+						</div>
+					{{else}}
+						<h5 local-class="live">The 2019 annual HSCTF is now <strong>live</strong> at <a href="https://play.nullify.uno">play.nullify.uno</a>!!!</h5>
+					{{/liquid-if}}
+
+				</div>
+
+				<div class="col-md text-right" local-class="pokemon-right">
+					<span local-class="copyright" class="font-weight-bold">&copy; 2014 - 2019 Pixelated-Takkun</span>
+
+					{{#liquid-if (is-after "11/15/2018") local-class=(if (is-after "11/15/2018") "image-overlay")}}
+						<iframe src="https://unomaha.az1.qualtrics.com/jfe/form/SV_8oEhWhInHEDzY5n" class="border-none" width="100%" height="100%" local-class="iframe"></iframe>
+					{{/liquid-if}}
+				</div>
+
+			</div>
+		{{!-- </div>
+	</div>
+</div> --}}
+{{liquid-outlet}}

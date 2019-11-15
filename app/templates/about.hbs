@@ -1,0 +1,56 @@
+<div class="container">
+	<div class="row">
+		<div class="col-md-12 fade-in">
+			<div class="row align-items-center d-flex justify-content-center">
+				<h1 class="display-3">About</h1>
+				<img src="assets/images/nullify_logo.svg" alt="Nullify Logo">
+			</div>
+
+			<p class="lead text-center">The purpose of this organization is to provide a place for members of the community to come together and discuss cybersecurity topics, learn skills that employers require of cybersecurity professionals, as well as to prepare for Capture the Flag (CTF) cybersecurity competitions. Established in 2011, NULLify has competed in numerous CTFs ranging from international competitions to locally hosted (UNO-based) competitions. Competitions utilize skills such as programming, vulnerability discovery, exploitation, reverse engineering, social engineering and so forth. NULLify has had the great fortune of being invited to numerous final round competitions in the past, including trips to Polytechnic Institute of New York University and Iowa State University. NULLify also performs community outreach to local area residents. This is performed by giving talks at the International Cyber Defense Workshop (ICDW), UNO's Academy of Excellence, The Peter Kiewit Institutes college workshop, and to NEbraskaCERT.</p>
+			
+			<div local-class="strike">
+				<h3>👑 Meet the Officers 👑</h3>
+			</div>
+			
+			<div class="row pt-3">
+				{{#each this.model as |officer|}}
+					<div class="col">
+						{{officer-card officer}}
+					</div>
+				{{/each}}
+			</div>
+			
+			{{!-- <div class="d-flex justify-content-center" local-class="officers">
+				<div class="text-center">
+					<h3>President</h3>
+					<hr local-class="split">
+					<h4 class="text-muted">Frank Tursi</h4>
+				</div>
+				<div class="text-center">
+					<h3>Vice President</h3>
+					<hr local-class="split">
+					<h4 class="text-muted">Drew Griess</h4>
+				</div>
+			</div>
+			<div class="d-flex justify-content-center">
+				<div class="text-center">
+					<h3>Communications Director</h3>
+					<hr local-class="split">
+					<h4 class="text-muted">Marvin Roca Ruano</h4>
+				</div>
+				<div class="text-center">
+					<h3>Event Organizer</h3>
+					<hr local-class="split">
+					<h4 class="text-muted">Aaron Wurtele</h4>
+				</div>
+				<div class="text-center">
+					<h3>Web Administrator</h3>
+					<hr local-class="split">
+					<h4 class="text-muted">Aaron Vigal</h4>
+				</div>
+			</div> --}}
+			
+		</div>
+	</div>
+</div>
+{{liquid-outlet}}

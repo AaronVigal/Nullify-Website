@@ -1,0 +1,9 @@
+{
+  "name": "nullify-website",
+  "dependencies": {
+    "typed.js": "^1.1.1",
+    "interact": "1.2.8",
+    "jquery-simulate": "1.0.1",
+    "fontawesome": "~4.7.0"
+  }
+}

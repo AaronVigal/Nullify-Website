@@ -1,0 +1,13 @@
+.gradient-background {
+  background: -webkit-linear-gradient(315deg, rgba(39, 150, 60, 0.5) 0%, rgba(48, 48, 48, 1) 80%); /* Chrome 10+, Saf5.1+ */
+  background: -moz-linear-gradient(315deg, rgba(39, 150, 60, 0.5) 0%, rgba(48, 48, 48, 1) 80%); /* FF3.6+ */
+  background: -ms-linear-gradient(315deg, rgba(39, 150, 60, 0.5) 0%, rgba(48, 48, 48, 1) 80%); /* IE10 */
+  background: -o-linear-gradient(315deg, rgba(39, 150, 60, 0.5) 0%, rgba(48, 48, 48, 1) 80%); /* Opera 11.10+ */
+  background: linear-gradient(315deg, rgba(39, 150, 60, 0.5) 0%, rgba(48, 48, 48, 1) 80%); /* W3C */
+}
+
+.banner {
+	margin-top: 8vh;
+	margin-bottom: 8vh;
+	font-size: 21px;
+}

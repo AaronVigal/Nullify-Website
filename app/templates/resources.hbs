@@ -1,0 +1,25 @@
+<div class="container">
+	<div class="row">
+		<div class="col-md-12">
+			<h1>Resources</h1>
+			{{!-- <div style="height: 100vh;">
+				{{matrix-container}}
+			</div> --}}
+
+			<canvas id="matrix"></canvas>
+			
+			<svg local-class="hide" xmlns="http://www.w3.org/2000/svg">
+				<defs>
+					<filter id="blur-horizontal">
+						<feGaussianBlur stdDeviation="3,0" />
+					</filter>
+					<filter id="blur-vertical">
+						<feGaussianBlur stdDeviation="0,6" />
+					</filter>
+				</defs>
+			</svg>
+
+		</div>
+	</div>
+</div>
+{{liquid-outlet}}

@@ -1,0 +1,36 @@
+<div class="full-width h-100" local-class="gradient-background">
+	<div class="container h-100">
+		<div class="row h-100">
+			<div class="col-md-12 align-self-center">
+				{{!-- <h1>----------------------</h1>
+				<h1>{{this.model.announcement.text}}</h1>
+				<h1>----------------------</h1> --}}
+				{{#each this.model as |announcement index|}}
+					{{#unless index}}
+						{{fake-terminal announcement}}
+					{{/unless}}
+				{{/each}}
+				
+			</div>
+		</div>
+	</div>
+</div>
+
+{{!-- <div class="full-width"> --}}
+	{{!-- <blockquote class="blockquote text-center" local-class="banner">
+		<p class="mb-0">Nullify is a really cool club</p>
+		<footer class="blockquote-footer">Some random <cite title="Source Title">loser</cite></footer>
+	</blockquote> --}}
+{{!-- </div> --}}
+
+{{!-- <div class="full-width">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				{{newsletter-signup}}
+
+			</div>
+		</div>
+	</div>
+</div> --}}
+{{liquid-outlet}}

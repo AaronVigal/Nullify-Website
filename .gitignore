@@ -23,3 +23,16 @@
 /.node_modules.ember-try/
 /bower.json.ember-try
 /package.json.ember-try
+
+# Custom
+.todo
+.vscode/
+
+# I don't wanna push admin stuff yet
+app/components/admin/
+app/controllers/admin/
+app/routes/admin/
+app/styles/admin/
+app/styles/components/admin/
+app/templates/admin/
+app/templates/components/admin/

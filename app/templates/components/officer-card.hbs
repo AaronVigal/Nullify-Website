@@ -1,0 +1,23 @@
+<div class="card mx-auto" local-class="officer-card">
+	{{!-- <img src="..." class="card-img-top" alt="..."> --}}
+	<div class="card-body">
+		<div class="row" local-class="top-row">
+			<div class="col-md-auto my-auto" local-class="image-holder">
+				{{#if officer.photo}}
+					<img src={{officer.photo}} alt="Photo of {{officer.name}}" local-class="profile-picture">
+				{{else}}
+					<img src="https://via.placeholder.com/150" alt="Photo of {{officer.name}}" local-class="profile-picture">
+				{{/if}}
+			</div>
+
+			<div class="col" local-class="text-holder">
+				<h5 class="card-title">{{officer.name}}</h5>
+				<h6 class="card-subtitle mb-2 text-muted">{{officer.position}}</h6>
+			</div>
+		</div>
+		<p class="card-text">{{officer.about}}</p>
+		<a href="mailto:{{officer.email}}" class="card-link font-italic">{{officer.email}}</a>
+	</div>
+</div>
+
+{{yield}}

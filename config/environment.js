@@ -17,6 +17,16 @@ module.exports = function(environment) {
       }
     },
 
+	firebase: {
+		apiKey: "AIzaSyDJ2dw8FsDsRlrsNmn1hQ08Yc6v358njA8",
+		authDomain: "nullify-website.firebaseapp.com",
+		databaseURL: "https://nullify-website.firebaseio.com",
+		projectId: "nullify-website",
+		storageBucket: "nullify-website.appspot.com",
+		messagingSenderId: "524615343385",
+		appId: "1:524615343385:web:f7deee1ce574893527f988"
+	},
+
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
