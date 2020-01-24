@@ -1,63 +1,67 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-	<div class="container"> 
+{{!-- Skip Link because I'm extra --}}
+<a local-class="skip-main" href="#content">Skip to main content</a>
+
+<BsNavbar class="navbar navbar-expand-lg navbar-light bg-light" as |navbar|>
+	<div class="container">
 		{{!--  Show this only on mobile to medium screens  --}}
-		{{#link-to "index" class="navbar-brand d-lg-none"}}
-			<img src="/assets/images/nullify_banner.svg" alt="Nullify Banner" width="50%">
-		{{/link-to}}
-
-		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle"
-			aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
-			<span class="navbar-toggler-icon"></span>
-		</button>
-
-		{{!--  Use flexbox utility classes to change how the child elements are justified  --}}
-		<div class="collapse navbar-collapse justify-content-between" id="navbarToggle">
-
-			<ul class="navbar-nav slide-in-from-left">
-				<li class="nav-item">
-					{{#link-to "index" class="nav-link"}}Home{{/link-to}}
-				</li>
-				<li class="nav-item">
-					{{#link-to "about" class="nav-link"}}About{{/link-to}}
-				</li>
-				{{!-- <li class="nav-item">
-					{{#link-to "sponsors" class="nav-link"}}Sponsors{{/link-to}}
-				</li> --}}
-				<li class="nav-item">
-					{{#link-to "calendar" class="nav-link"}}Calendar{{/link-to}}
-				</li>
-			</ul>
-
-
+		<div class="d-flex flex-row justify-content-between w-100 d-lg-none">
 			{{#if session.isAuthenticated}}
-				{{#link-to "admin.index" class="navbar-brand s-none d-lg-block text-center mx-auto"}}
+				{{#link-to "admin.index" class="navbar-brand d-lg-none d-inline-flex slide-in-from-top"}}
+					<img src="/assets/images/nullify_banner.svg" alt="Nullify Banner" width="50%">
+				{{/link-to}}
+			{{else}}
+				{{#link-to "index" class="navbar-brand d-lg-none d-inline-flex slide-in-from-top"}}
+					<img src="/assets/images/nullify_banner.svg" alt="Nullify Banner" width="50%">
+				{{/link-to}}
+			{{/if}}
+			<navbar.toggle class="slide-in-from-right" />
+		</div>
+
+		<navbar.content class="justify-content-between">
+			<navbar.nav class="d-flex flex-row justify-content-center slide-in-from-left" as |nav|>
+				<nav.item class="mx-2 mx-lg-0">
+					<nav.linkTo @route="index">Home</nav.linkTo>
+				</nav.item>
+				<nav.item class="mx-2 mx-lg-0">
+					<nav.linkTo @route="about">About</nav.linkTo>
+				</nav.item>
+				<nav.item class="mx-2 mx-lg-0">
+					<nav.linkTo @route="calendar">Calendar</nav.linkTo>
+				</nav.item>
+				<nav.item class="mx-2 mx-lg-0">
+					<nav.linkTo @route="posts.index">Blog</nav.linkTo>
+				</nav.item >
+				{{!-- <nav.item>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				</nav.item> --}}
+			</navbar.nav>
+
+			{{!--  Show this only on large and up screens  --}}
+			{{#if session.isAuthenticated}}
+				{{#link-to "admin.index" class="navbar-brand d-none d-lg-block text-center mx-auto"}}
 					<img src="/assets/images/nullify_banner.svg" class="img-fluid slide-in-from-top" alt="Nullify Banner" width="60%">
 				{{/link-to}}
 			{{else}}
-				{{#link-to "index" class="navbar-brand s-none d-lg-block text-center mx-auto"}}
+				{{#link-to "index" class="navbar-brand d-none d-lg-block text-center mx-auto"}}
 					<img src="/assets/images/nullify_banner.svg" class="img-fluid slide-in-from-top" alt="Nullify Banner" width="60%">
 				{{/link-to}}
 			{{/if}}
-			{{!--   Show this only lg screens and up   --}}
-			
-				
-				
-			
 
-
-
-			<ul class="navbar-nav slide-in-from-right">
-				<li class="nav-item">
-					{{#link-to "contact" class="nav-link"}}Contact Us{{/link-to}}
-				</li>
-				<li class="nav-item">
-					{{#link-to "resources" class="nav-link"}}Resources{{/link-to}}
-				</li>
-				<li class="nav-item">
-					{{#link-to "hsctf" class="nav-link"}}HSCTF{{/link-to}}
-				</li>
-			</ul>
-		</div>
+			<navbar.nav class="d-flex flex-row justify-content-center slide-in-from-right" as |nav|>
+				<nav.item class="mx-2 mx-lg-0">
+					<nav.linkTo @route="contact">Contact Us</nav.linkTo>
+				</nav.item>
+				<nav.item class="mx-2 mx-lg-0">
+					<nav.linkTo @route="resources">Resources</nav.linkTo>
+				</nav.item>
+				<nav.item class="mx-2 mx-lg-0">
+					<nav.linkTo @route="hsctf">HSCTF</nav.linkTo>
+				</nav.item>
+				<nav.item class="mx-2 mx-lg-0">
+					<nav.linkTo @route="sponsors">Sponsors</nav.linkTo>
+				</nav.item>
+			</navbar.nav>
+		</navbar.content>
 	</div>
-</nav>
+</BsNavbar>
 {{yield}}

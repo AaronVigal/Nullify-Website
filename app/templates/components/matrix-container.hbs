@@ -1,0 +1,20 @@
+
+<div class="full-width h-100" id="wrapper">
+
+	<canvas id="matrix" class="h-100" local-class="matrix"></canvas>
+
+	<svg local-class="hide" xmlns="http://www.w3.org/2000/svg">
+		<defs>
+			<filter id="blur-horizontal">
+				<feGaussianBlur stdDeviation="3,0" />
+			</filter>
+			<filter id="blur-vertical">
+				<feGaussianBlur stdDeviation="0,6" />
+			</filter>
+		</defs>
+	</svg>
+</div>
+
+<div local-class="forward">
+	{{yield}}
+</div>

@@ -2,12 +2,23 @@
   display: none;
 }
 
-#matrix {
-  background-color: #3e3e56;
+.matrix {
+  background-color: #222222;
   -webkit-animation: blur 10s infinite;
   animation: blur 10s infinite;
   -webkit-animation-delay: 10s;
   animation-delay: 10s;
+  margin: 0;
+  position: absolute;
+  width: 100%;
+}
+
+.forward {
+	position: fixed;
+	left: 0;
+	top: 0;
+	z-index: 1;
+	width: 100%;
 }
 
 @-webkit-keyframes blur {

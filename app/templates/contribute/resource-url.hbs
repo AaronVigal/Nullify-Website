@@ -1,0 +1,15 @@
+<div class="card p-5 my-5 text-center align-items-center">
+	<h3 class="display-5 text-center">What is the url of the resource?</h3>
+	{{input type="url" name="url" local-class="question" id="url" autocomplete="off" class="text-white text-center" value=res.url required="true"}}
+	<label for="url"><span class="text-white">What's the name of this resource?</span></label>
+</div>
+<div class="d-flex">
+	<div class="p-2">
+		{{#link-to "contribute.resource-name" tagName="button" type="button" class="btn btn-primary" onclick=(action "progress")}}&larr; Back{{/link-to}}
+	</div>
+	<div class="ml-auto p-2">
+		{{#link-to "contribute.resource-tags" this.model tagName="button" type="button" class="btn btn-primary float-right" onclick=(action "progress") res=res}}Next &rarr;{{/link-to}}
+	</div>
+</div>
+
+{{liquid-outlet}}

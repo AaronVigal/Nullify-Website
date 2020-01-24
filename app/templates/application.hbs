@@ -1,14 +1,5 @@
-{{!-- <div local-class="main"> --}}
-	{{!-- <div local-class="navbar"> --}}
-		{{navbar}}
-	{{!-- </div> --}}
-	<div local-class="content">
-		{{liquid-outlet class="h-100"}}
-		{{footer}}
-	</div>
-	{{!-- <div local-class="footer"></div> --}}
-	
-	
-	
-{{!-- </div> --}}
-{{!-- {{footer}} --}}
+{{navbar}}
+<div local-class="content" id="content">
+	{{liquid-outlet class="h-100"}}
+	{{footer}}
+</div>

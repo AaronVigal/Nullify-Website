@@ -10,6 +10,38 @@
   animation-delay: 10s;
 }
 
+.card-link {
+	color: inherit;
+	text-decoration: none;
+}
+
+.has-search > input {
+  padding-left: 2.375rem;
+}
+
+.has-search > span {
+  position: absolute;
+  z-index: 5;
+  display: block;
+  width: 2.375rem;
+  height: 2.375rem;
+  line-height: 2.375rem;
+  text-align: center;
+  pointer-events: none;
+  color: #aaa;
+}
+
+.tags-section {
+	position: absolute;
+	z-index: 5;
+	right: 0;
+}
+
+.search {
+	border-radius: 0.25rem !important;
+	// border-top-left-radius: 0.25rem !important;
+}
+
 @-webkit-keyframes blur {
   0% {
     -webkit-filter: url("#blur-horizontal");

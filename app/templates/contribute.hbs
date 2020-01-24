@@ -1,0 +1,24 @@
+<div class="container">
+	<div class="row">
+		<div class="col-md-12 pt-4 fade-in">
+
+			<h1 class="display-4 mt-3 text-center">Contribute</h1>
+
+			<BsProgress class="my-4" as |pg|>
+				<pg.bar @value={{this.model.progress}} @minValue={{0}} @maxValue={{5}} @showLabel={{false}} @type="primary" />
+			</BsProgress>
+			<button class="btn btn-primary" onclick={{action "digress"}}>Digress</button>
+			<button class="btn btn-primary" onclick={{action "progress"}}>Progress</button>
+
+			{{liquid-outlet}}
+
+			{{!-- <h4 class="display-5 text-center">What is the name of the resource?</h4>
+			{{input type="text" value=name}}
+
+			<h4 class="display-5 text-center">What is the URL to the resource?</h4>
+			{{input type="url" value=url}}
+			<button type="button" class="btn btn-outline-success" onclick={{action "add"}}>{{fa-icon "plus"}}&nbsp;Add</button> --}}
+			
+		</div>
+	</div>
+</div>

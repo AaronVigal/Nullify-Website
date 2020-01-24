@@ -1,7 +1,7 @@
-<div class="chimp-says" style="margin: 10px;">{{chimpSays}}</div>
 <div class="input-group mb-3">
-	{{input key-press="valueDidChange" placeholder=placeholder value=value type="email" class="form-control" name="EMAIL" aria-label=label}}
+	{{input key-press="valueDidChange" placeholder=placeholder value=value type="email" class="form-control" name="EMAIL" aria-label=label id="chimp"}}
 	<div class="input-group-append">
 		<button class="btn btn-primary" type="submit">{{if isLoading loadingText buttonText}}</button>
 	</div>
 </div>
+<div class="chimp-says mt-1">{{chimpSays}}</div>

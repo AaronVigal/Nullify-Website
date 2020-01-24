@@ -15,7 +15,7 @@ module.exports = function(environment) {
         // Prevent Ember Data from overriding Date.parse.
         Date: false
       }
-    },
+	},
 
 	firebase: {
 		apiKey: "AIzaSyDJ2dw8FsDsRlrsNmn1hQ08Yc6v358njA8",
@@ -25,6 +25,10 @@ module.exports = function(environment) {
 		storageBucket: "nullify-website.appspot.com",
 		messagingSenderId: "524615343385",
 		appId: "1:524615343385:web:f7deee1ce574893527f988"
+	},
+
+	emberHighlightJs: {
+		style: 'arta'
 	},
 
     APP: {
@@ -41,6 +45,15 @@ module.exports = function(environment) {
     // ENV.APP.LOG_VIEW_LOOKUPS = true;
   }
 
+  ENV['ember-google-maps'] = {
+	key: 'AIzaSyAvN2XmFV_7rZ6EiKYNxppsnr9u05urIiw',
+	language: 'en',
+	region: 'US',
+	protocol: 'https',
+	version: '3.35',
+	libraries: ['geometry', 'places'],
+  }
+
   if (environment === 'test') {
     // Testem prefers this...
     ENV.locationType = 'none';
@@ -53,9 +66,10 @@ module.exports = function(environment) {
     ENV.APP.autoboot = false;
   }
 
-  if (environment === 'production') {
-    // here you can enable a production-specific feature
-  }
+	if (environment === 'production') {
+		ENV.rootURL = '/UNO-NULLify.github.io';
+		ENV.locationType = 'hash';
+	}
 
   return ENV;
 };

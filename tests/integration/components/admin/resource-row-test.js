@@ -3,22 +3,22 @@ import { setupRenderingTest } from 'ember-qunit';
 import { render } from '@ember/test-helpers';
 import hbs from 'htmlbars-inline-precompile';
 
-module('Integration | Component | fake-terminal', function(hooks) {
+module('Integration | Component | admin/resource-row', function(hooks) {
   setupRenderingTest(hooks);
 
   test('it renders', async function(assert) {
     // Set any properties with this.set('myProperty', 'value');
     // Handle any actions with this.set('myAction', function(val) { ... });
 
-    await render(hbs`<FakeTerminal />`);
+    await render(hbs`{{admin/resource-row}}`);
 
     assert.equal(this.element.textContent.trim(), '');
 
     // Template block usage:
     await render(hbs`
-      <FakeTerminal>
+      {{#admin/resource-row}}
         template block text
-      </FakeTerminal>
+      {{/admin/resource-row}}
     `);
 
     assert.equal(this.element.textContent.trim(), 'template block text');

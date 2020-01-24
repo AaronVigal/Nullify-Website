@@ -1,19 +1,25 @@
 <div class="container">
 	<div class="row">
-		<div class="col-md-12 pt-5">
-			{{as-calendar
-			  title="Nullify Calendar"
-			  occurrences=events
-			  defaultTimeZoneQuery="New York|London|Dubai|Hong Kong"
-			  dayStartingTime="9:00"
-			  dayEndingTime="21:00"
-			  timeSlotDuration="00:30"
-			  class="fade-in"
-			  onAddOccurrence=(action "false")
-			  onUpdateOccurrence=(action "false")
-			  onRemoveOccurrence=(action "false")
-			  }}
-			  <br><p></p><br>
+		<div class="col-md-12 mt-5">
+			<h2 class="display-4 text-center fade-in mb-4">📅 Calendar</h2>
+			<h3 class="display-6 font-weight-light">Next Meeting</h3>
+			<div class="card p-3 my-3 fade-in">
+				{{highlight-js code=this.model.nextMeeting.str lang="json" hasLineNumbers=false local-class="code"}}
+				<a href={{this.model.nextMeeting.url}} target="_blank" rel="noopener" type="button" class="btn btn-lg btn-light" local-class="button">{{fa-icon "calendar"}}</a>
+			</div>
+
+			<h3 class="display-6 pt-lg-3 font-weight-light">Upcoming Meetings</h3>
+			
+			{{!-- {{#each (sort-by "date" upcoming-meetings) as |meeting|}} --}}
+			{{#each this.model.upcomingMeetings as |meeting|}} 
+				<div class="card p-3 my-3 fade-in">
+					{{highlight-js code=meeting.str lang="json" hasLineNumbers=false local-class="code"}}
+					<a href={{meeting.url}} target="_blank" rel="noopener" type="button" class="btn btn-lg btn-light" local-class="button">{{fa-icon "calendar"}}</a>
+				</div>
+			{{/each}}
+
+			<hr class="mt-5">
+			<p class="text-muted text-center">Want these events to sync directly to your Google or Apple calendar?<br><a href={{this.model.sharableURL}} target="_blank" rel="noopener">Click Here</a> to add it to your calendar.</p>
 		</div>
 	</div>
 </div>

@@ -1,25 +1,67 @@
-<div class="container">
-	<div class="row">
-		<div class="col-md-12">
-			<h1>Resources</h1>
-			{{!-- <div style="height: 100vh;">
-				{{matrix-container}}
-			</div> --}}
+<div class="h-100 full-width">
 
-			<canvas id="matrix"></canvas>
-			
-			<svg local-class="hide" xmlns="http://www.w3.org/2000/svg">
-				<defs>
-					<filter id="blur-horizontal">
-						<feGaussianBlur stdDeviation="3,0" />
-					</filter>
-					<filter id="blur-vertical">
-						<feGaussianBlur stdDeviation="0,6" />
-					</filter>
-				</defs>
-			</svg>
+	{{#matrix-container class="h-100 full-width fade-in"}}
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12 justify-content-center pt-md-5 pt-3">
+					<h1 class="display-4 text-center fade-in mb-3">Resources</h1>
+					<div class="row justify-content-center mb-3">
+						<div class="col-md-8 col-12">
+							<div class="input-group" local-class="has-search">
+								
+								<span class="my-auto">{{fa-icon "search"}}</span>
 
+								{{input type="text" aria-label="Search" local-class="search" class="form-control my-0 py-1" placeholder="Search" value=search}}
+								<div class="align-middle" local-class="tags-section">
+									{{#each filterTags as |ft|}}
+									<span class="badge badge-pill badge-dark p-2 mx-1 float-right my-auto align-middle"
+										onclick={{action "removeTag" ft}}>{{fa-icon "times-circle"}}&nbsp;{{ft.name}}</span>
+									{{/each}}
+								</div>
+
+								{{!-- TODO: Add this back in once tag filtering works reliably --}}
+								{{!-- <div class="input-group-append">
+									<BsDropdown as |dd|>
+										<dd.button>Filter by Tags <span class="caret"></span></dd.button>
+										<dd.menu as |ddm|>
+											{{#each this.model.tags as |tag| }}
+												<ddm.item><a class="p-3" onclick={{action "addTag" tag}}>{{tag.name}}</a></ddm.item><br>
+											{{/each}}
+										</dd.menu>
+									</BsDropdown>
+								</div> --}}
+							</div>
+						</div>
+					</div>
+
+					<ul class="list-group">
+						{{#each filtered as |resource|}}
+							<li class="list-group-item list-group-item-action">
+								<div class="row">
+									<div class="col text-truncate">
+										<span class="mb-0 align-middle text-white d-none d-lg-block">{{resource.name}} &mdash; <span class="text-muted font-italic">{{resource.url}}</span></span>
+										<span class="mb-0 align-middle text-white d-lg-none">{{resource.name}}</span>
+									</div>
+									<div class="col align-middle">
+										<a href={{resource.url}} role="button" class="btn btn-sm btn-primary float-right" onclick={{action "usedResource" resource}}><span class="align-middle">Visit &rarr;</span></a>
+										{{#each resource.tags as |tag|}}
+											<span class="badge badge-pill badge-dark p-2 mx-1 float-right my-auto">{{tag.name}}</span>
+										{{/each}}
+
+									</div>	
+								</div>
+							</li>
+						{{else}}
+							<h4 class="display-5 text-center mt-5">Sorry, no items were found matching that search.</h4>
+						{{/each}}
+					</ul>
+					{{!-- TODO: Add this back in once the contribute route is complete --}}
+					{{!-- <p class="text-center pt-4 mb-0">Want to contribute to this growing list of resources? <br>Fill out {{#link-to "contribute.resource-name"}}this form{{/link-to}} to get a new resource listed above :)</p> --}}
+				</div>
+			</div>
 		</div>
-	</div>
+	{{/matrix-container}}
+
 </div>
+
 {{liquid-outlet}}

@@ -1,0 +1,138 @@
+{{!-- <div class="container">
+	<div class="row">
+		<div class="col-md-12"> --}}
+			{{!-- TODO: Fix this height and fix the countdown column break --}}
+			<div class="row no-gutters">
+				<div class="col-md-6 no-gutters">
+					<div class="d-flex justify-content-center align-items-center px-3" local-class="leftside">
+						<div class="text-center">
+							<img src="/assets/images/hsctf-logo.png" alt="HSCTF Logo" class="mt-4 mt-md-0" local-class="logo">
+							<h1 class="pb-3">Final Round - February 8th, 2020</h1>
+							<p>Join us on February 8th at Scott Conference Center on the University Nebraska Omaha campus. The doors open at 7:30 am
+								and the competition starts at 8 am. The competition will be scored and prizes will be distributed starting at 2 pm.
+							</p>
+							
+							<p class="pb-2">We have scored the placement round and have generated the following two brackets. You will be competing
+								against others in your bracket for prizes. Good luck and have fun!</p>
+							
+							{{#liquid-if showCountdown}}
+								<div class="row justify-content-center mx-auto mb-4" local-class="left-side">
+									<div class="col mb-3">
+										<div local-class="circle" class="rounded-circle mx-auto">
+											<h1 class="days mb-0" local-class="countdown">{{days}}</h1>
+											<p>Days</p>
+										</div>
+									</div>
+									<div class="col mb-3">
+										<div local-class="circle" class="rounded-circle mx-auto">
+											<h1 class="hours mb-0" local-class="countdown">{{hours}}</h1>
+											<p>Hours</p>
+										</div>
+									</div>
+									<div class="col">
+										<div local-class="circle" class="rounded-circle mx-auto">
+											<h1 class="minutes mb-0" local-class="countdown">{{minutes}}</h1>
+											<p>Minutes</p>
+										</div>
+									</div>
+									<div class="col">
+										<div local-class="circle" class="rounded-circle mx-auto">
+											<h1 class="seconds mb-0" local-class="countdown">{{seconds}}</h1>
+											<p>Seconds</p>
+										</div>
+									</div>
+								</div>
+							{{else}}
+								<h5 local-class="live">The 2019 annual HSCTF is now <strong>live</strong> at <a href="https://play.nullify.uno">play.nullify.uno</a>!!!</h5>
+							{{/liquid-if}}
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6 no-gutters" local-class="pokemon-right">
+					<div class="d-flex align-items-center" local-class="rightside">
+						<div class="text-center">
+							<h1 class="display-4" local-class="outline"><strong>Pokemon Masters</strong></h1>
+							
+							<h4 class="px-5" local-class="outline">
+								MillNorthOne — &lt;XSS&gt; — BogoBogoBogo Sort — The Bell Tower — Reference Variables — Turing Off — MillNorthTwo
+							</h4>
+							
+							<hr class="my-5">
+							
+							<h1 class="display-4" local-class="outline"><strong>Pokemon Trainers</strong></h1>
+							
+							<h4 class="px-5" local-class="outline">
+								Over The River — Elite Six — LSW A — CyberJays — 100% That Bit — LSE 3 — Central Purple — LifeHackers — LSW B — East
+								White — East Blue — Omaha Central Eagles
+							</h4>
+						</div>
+					</div>
+				</div>
+			</div>
+			{{!-- <div class="row no-gutters">
+				<div class="col-lg-6 text-center my-auto fade-in mx-3 no-gutters">
+					<img src="/assets/images/hsctf-logo.png" alt="HSCTF Logo" class="mt-4 mt-md-0" local-class="logo">
+			
+
+					<h1 class="pb-3">Final Round - February 8th, 2020</h1>
+					<p>Join us on February 8th at Scott Conference Center on the University Nebraska Omaha campus. The doors open at 7:30 am
+					and the competition starts at 8 am. The competition will be scored and prizes will be distributed starting at 2 pm.</p>
+
+					<p class="pb-2">We have scored the placement round and have generated the following two brackets. You will be competing against others in your bracket for prizes. Good luck and have fun!</p>
+
+					{{#liquid-if showCountdown}}
+						<div class="row justify-content-center mx-auto" local-class="left-side">
+							<div class="col mb-3">
+								<div local-class="circle" class="rounded-circle mx-auto">
+									<h1 class="days mb-0" local-class="countdown">{{days}}</h1>
+									<p>Days</p>
+								</div>
+							</div>
+							<div class="col mb-3">
+								<div local-class="circle" class="rounded-circle mx-auto">
+									<h1 class="hours mb-0" local-class="countdown">{{hours}}</h1>
+									<p>Hours</p>
+								</div>
+							</div>
+							<div class="col">
+								<div local-class="circle" class="rounded-circle mx-auto">
+									<h1 class="minutes mb-0" local-class="countdown">{{minutes}}</h1>
+									<p>Minutes</p>
+								</div>
+							</div>
+							<div class="col">
+								<div local-class="circle" class="rounded-circle mx-auto">
+									<h1 class="seconds mb-0" local-class="countdown">{{seconds}}</h1>
+									<p>Seconds</p>
+								</div>
+							</div>
+						</div>
+					{{else}}
+						<h5 local-class="live">The 2019 annual HSCTF is now <strong>live</strong> at <a href="https://play.nullify.uno">play.nullify.uno</a>!!!</h5>
+					{{/liquid-if}}
+
+				</div>
+
+				<div class="col-md-6 d-table text-center no-gutters" local-class="pokemon-right">
+					<div class="d-table-cell align-middle">
+						<h1 class="display-4" local-class="outline"><strong>Pokemon Masters</strong></h1>
+
+						<h4 class="px-5" local-class="outline">
+							MillNorthOne — &lt;XSS&gt; — BogoBogoBogo Sort — The Bell Tower — Reference Variables — Turing Off — MillNorthTwo
+						</h4>
+
+						<hr class="my-5">
+
+						<h1 class="display-4" local-class="outline"><strong>Pokemon Trainers</strong></h1>
+
+						<h4 class="px-5" local-class="outline">
+							Over The River — Elite Six — LSW A — CyberJays — 100% That Bit — LSE 3 — Central Purple — LifeHackers — LSW B — East White — East Blue — Omaha Central Eagles
+						</h4>
+					</div>
+				</div>
+
+			</div> --}}
+		{{!-- </div>
+	</div>
+</div> --}}
+{{liquid-outlet}}

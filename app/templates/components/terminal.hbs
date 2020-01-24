@@ -1,4 +1,4 @@
-<div local-class="terminal-outer" class="mx-auto fade-in">
+<div local-class="terminal-outer" class="mx-md-auto fade-in">
 	<div local-class="terminal-container">
 		<div local-class="terminal-section terminal-header">
 			<div local-class="terminal-controls">
@@ -10,52 +10,36 @@
 		<div local-class="terminal-section terminal-body">
 			<div local-class="terminal-section terminal-body-inner">
 
-
-
 				<span local-class="terminal-user">
 					<font color="red" local-class="append">root@nullify.uno</font>
-					<font color="#02006c">:~/var/www/$</font>
+					<font color="#384ACD">:~/var/www/$</font>
 				</span>
 				{{typed-string strings=commandOne typeSpeed=typeSpeed loop=loop callback=(action "callbackOne") startDelay=delayOne showCursor=promptOneShowCursor}}<br>
-				<p hidden={{responseOneHidden}}>We are Nullify, a hard-working student club that does cyber-security related stuff. We do capture the flags, and other
-				shit too.</p>
-
-
-
+				<p hidden={{responseOneHidden}}>We are Nullify, a hard-working student club that is passionate about cyber-security. We regularly participate in CTF&apos;s, and work as a club to improve our skills.</p>
 
 				<span local-class="terminal-user" hidden={{promptTwoHidden}}>
 					<font color="red" local-class="append">root@nullify.uno</font>
-					<font color="#02006c">:~/var/www/$</font>
+					<font color="#384ACD">:~/var/www/$</font>
 				</span>
 				{{typed-string strings=commandTwo typeSpeed=typeSpeed loop=loop callback=(action "callbackTwo") startDelay=delayTwo showCursor=promptTwoShowCursor}}<br>
-				<p hidden={{responseTwoHidden}}>{{#link-to "index"}}index.html{{/link-to}} {{#link-to "about"}}about.html{{/link-to}} 
-					{{#link-to "sponsors"}}sponsors.html{{/link-to}} {{#link-to "calendar"}}calendar.html{{/link-to}} {{#link-to "contact"}}contact.html{{/link-to}}
-					{{#link-to "resources"}}resources.html{{/link-to}} {{#link-to "hsctf"}}hsctf.html{{/link-to}} .flag -> <font color="grey">/hidden/flag.txt</font> .announcements.txt</p>
-					
-					{{!-- ls-la format --}}
-					{{!-- total 104
-				<br>drwxr-xr-x 2 root root 4096 Jan 17 &nbsp;2019 .
-				<br>drwxr-xr-x 8 root root 4096 Jan 17 &nbsp;2019 ..
-				<br>-rw-r--r-- 1 root root 1337 Aug &nbsp;7&nbsp;&nbsp;2019 {{#link-to "index"}}index.html{{/link-to}}
-				<br>-rw-r--r-- 1 root root 1337 Aug &nbsp;7&nbsp;&nbsp;2019 {{#link-to "about"}}about.html{{/link-to}}
-				<br>-rw-r--r-- 1 root root 1337 Aug &nbsp;7&nbsp;&nbsp;2019 {{#link-to "sponsors"}}sponsors.html{{/link-to}}
-				<br>-rw-r--r-- 1 root root 1337 Aug &nbsp;7&nbsp;&nbsp;2019 .announcements.txt
-				<br>-rw-r--r-- 1 hidden hidden 1337 Aug &nbsp;7&nbsp;&nbsp;2019 .flag.txt</p> --}}
-
-
+				<p hidden={{responseTwoHidden}}>{{#link-to "index"}}index.html{{/link-to}}
+					{{#link-to "about"}}about.html{{/link-to}}
+					{{#link-to "sponsors"}}sponsors.html{{/link-to}} {{#link-to "calendar"}}calendar.html{{/link-to}}
+					{{#link-to "contact"}}contact.html{{/link-to}}
+					{{#link-to "resources"}}resources.html{{/link-to}} {{#link-to "hsctf"}}hsctf.html{{/link-to}} .flag
+					-> <font color="grey">/hidden/flag.txt</font> .announcements.txt</p>
 
 				<span local-class="terminal-user" hidden={{promptThreeHidden}}>
 					<font color="red" local-class="append">root@nullify.uno</font>
-					<font color="#02006c">:~/var/www/$</font>
+					<font color="#384ACD">:~/var/www/$</font>
 				</span>
 				{{typed-string strings=commandThree typeSpeed=typeSpeed loop=loop callback=(action "callbackThree") startDelay=delayThree showCursor=promptThreeShowCursor}}<br>
 				<p hidden={{responseThreeHidden}}>{{{announcement.text}}}</p>
 
-
 				<div local-class="skip-button">
 					{{fa-icon "fast-forward" click=(action "skip")}}
 				</div>
-			
+
 			</div>
 		</div>
 	</div>

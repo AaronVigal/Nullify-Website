@@ -1,6 +1,10 @@
 import Component from '@ember/component';
 import { A } from '@ember/array';
 export default Component.extend({
+
+	strings: ['^1000 whoami\n `We are NULLify, a hard working club...` ^1000 ls -la\n `Output of ls...` ^1000 cat .announcements.txt\n `This is where the announcement goes...`'],
+
+
 	commandOne: A(['whoami']),
 	commandTwo: A(['ls -a']),
 	commandThree: A(['cat .announcements.txt']),
@@ -11,12 +15,12 @@ export default Component.extend({
 
 	promptTwoHidden: true,
 	promptThreeHidden: true,
-	
+
 	responseOneHidden: true,
 	responseTwoHidden: true,
 	responseThreeHidden: true,
 
-	promptOneShowCursor: true,
+	promptOneShowCursor: false,
 	promptTwoShowCursor: false,
 	promptThreeShowCursor: false,
 
@@ -24,8 +28,14 @@ export default Component.extend({
 	loop: false,
 
 	actions: {
+		completed() {
+
+		},
+
+
+
 		// TODO: Fix this function
-		skip(){
+		skip() {
 			this.set('responseOneHidden', false);
 			this.set('promptTwoHidden', false);
 			this.set('responseTwoHidden', false);
@@ -36,23 +46,34 @@ export default Component.extend({
 			this.set('promptTwoShowCursor', false);
 			this.set('promptThreeShowCursor', true);
 		},
+		// Also if you're reading this for some reason I'm sorry about
+		// all the try...catch's... it's just really annoying in the console with
+		// all the "can't set property on destroyed object" warnings
 		callbackOne() {
 			let controller = this;
 
 			setTimeout(function () {
 				// Add output of whoami command
-				controller.set('responseOneHidden', false);
+				try {
+					controller.set('responseOneHidden', false);
+				} catch (error) {}	
 
 				setTimeout(function () {
 					// Reveal terminal prompt 2
-					controller.set('promptTwoHidden', false);
+					try{
+						controller.set('promptTwoHidden', false);
+					} catch (error) {}
 				}, 200);
 
 			}, 300);
 
 			// Hide promptOne cursor and show promptTwo cursor
-			controller.set('promptOneShowCursor', false);
-			controller.set('promptTwoShowCursor', true);
+			try{
+				controller.set('promptOneShowCursor', false);
+			} catch (error) {}
+			try{
+				controller.set('promptTwoShowCursor', true);
+			} catch (error) {}
 		},
 		callbackTwo() {
 			let controller = this;
@@ -60,25 +81,35 @@ export default Component.extend({
 
 			setTimeout(function () {
 				// Add output of ls -a command
-				controller.set('responseTwoHidden', false);
+				try{
+					controller.set('responseTwoHidden', false);
+				} catch (error) {}
 
 				setTimeout(function () {
 					// Reveal terminal prompt 3
-					controller.set('promptThreeHidden', false);
+					try{
+						controller.set('promptThreeHidden', false);
+					} catch (error) {}
 				}, 200);
 
 			}, 300);
 
 			// Hide promptTwo cursor and show promptThree cursor
-			controller.set('promptTwoShowCursor', false);
-			controller.set('promptThreeShowCursor', true);
+			try{
+				controller.set('promptTwoShowCursor', false);
+			} catch (error) {}
+			try{
+				controller.set('promptThreeShowCursor', true);
+			} catch (error) {}
 		},
 		callbackThree() {
 			let controller = this;
 
 			setTimeout(function () {
 				// Add output of cat command
-				controller.set('responseThreeHidden', false);
+				try{
+					controller.set('responseThreeHidden', false);
+				} catch (error) {}
 			}, 400);
 		},
 

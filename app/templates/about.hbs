@@ -1,6 +1,6 @@
 <div class="container">
 	<div class="row">
-		<div class="col-md-12 fade-in">
+		<div class="col-md-12 pt-4 fade-in">
 			<div class="row align-items-center d-flex justify-content-center">
 				<h1 class="display-3">About</h1>
 				<img src="assets/images/nullify_logo.svg" alt="Nullify Logo">
@@ -12,44 +12,12 @@
 				<h3>👑 Meet the Officers 👑</h3>
 			</div>
 			
-			<div class="row pt-3">
-				{{#each this.model as |officer|}}
-					<div class="col">
-						{{officer-card officer}}
-					</div>
+			{{!-- <div class="card-deck align-items-center justify-content-center"> --}}
+			<div class="card-deck justify-content-center">
+				{{#each (sort-by "order" this.model) as |officer|}}
+					{{officer-card officer}}
 				{{/each}}
 			</div>
-			
-			{{!-- <div class="d-flex justify-content-center" local-class="officers">
-				<div class="text-center">
-					<h3>President</h3>
-					<hr local-class="split">
-					<h4 class="text-muted">Frank Tursi</h4>
-				</div>
-				<div class="text-center">
-					<h3>Vice President</h3>
-					<hr local-class="split">
-					<h4 class="text-muted">Drew Griess</h4>
-				</div>
-			</div>
-			<div class="d-flex justify-content-center">
-				<div class="text-center">
-					<h3>Communications Director</h3>
-					<hr local-class="split">
-					<h4 class="text-muted">Marvin Roca Ruano</h4>
-				</div>
-				<div class="text-center">
-					<h3>Event Organizer</h3>
-					<hr local-class="split">
-					<h4 class="text-muted">Aaron Wurtele</h4>
-				</div>
-				<div class="text-center">
-					<h3>Web Administrator</h3>
-					<hr local-class="split">
-					<h4 class="text-muted">Aaron Vigal</h4>
-				</div>
-			</div> --}}
-			
 		</div>
 	</div>
 </div>

@@ -1,8 +1,3 @@
-.logo {
-	width: 50px;
-	margin-right: 10px;
-}
-
 .logo-text {
 	color: white;
 	text-decoration: none;
@@ -11,11 +6,24 @@
 }
 
 .contact-card {
-	width: 35rem; 
 	padding: 20px; 
-	margin-top: -10%;
 }
 
 .mail-list {
 	width: 75%;
+}
+
+// Styling for the map component
+:global(.ember-google-map) {
+	border-radius: 0.5rem;
+	width: 100%;
+	height: 100%;
+}
+
+.map-wrapper{
+	height: 100%;
+}
+
+.map-wrapper > div > div > div > iframe {
+  background-color: #212121;
 }

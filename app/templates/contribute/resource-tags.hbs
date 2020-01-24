@@ -1,0 +1,14 @@
+<div class="card p-5 my-5 text-center align-items-center">
+	<h3 class="display-5 text-center">What type of content does this resource have?</h3>
+	<p class="text-muted text-center">Drag any of the tags below onto the resource you've created to reflect the type of content this resource has.</p>
+</div>
+<div class="d-flex">
+	<div class="p-2">
+		{{#link-to "contribute.resource-url" this.model tagName="button" type="button" class="btn btn-primary"}}&larr;
+		Back{{/link-to}}
+	</div>
+	<div class="ml-auto p-2">
+		{{#link-to "contribute.resource-finish" tagName="button" type="button" class="btn btn-primary float-right"}}Next&rarr;{{/link-to}}
+	</div>
+</div>
+{{liquid-outlet}}

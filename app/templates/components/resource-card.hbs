@@ -1,0 +1,10 @@
+<div class="card grid-item fade-in" local-class="card-hover">
+	<div class="card-body">
+		<h5 class="display-5 card-title text-center">{{resource.name}}</h5>
+		{{#each resource.tags as |tag|}}
+			<span class="badge badge-pill badge-dark p-2 m-1">{{tag}}</span>
+		{{/each}}
+	</div>
+</div>
+
+{{yield}}

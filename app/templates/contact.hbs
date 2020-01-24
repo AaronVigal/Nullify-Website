@@ -1,24 +1,42 @@
 <div class="container h-100">
 	<div class="row h-100">
 		<div class="col-md-12 align-self-center">
-			<div class="card text-center fade-in mx-auto" local-class="contact-card">
-				<h1>Contact Us</h1>
+			<div class="jumbotron fade-in mx-auto" local-class="contact-card">
+				<div class="row">
+					<div class="col-md-6">
+						<div class="mx-auto w-100" local-class="map-wrapper">
+							{{#g-map lat="41.247319" lng="-96.017368" zoom=17
+								styles=mapStyle
+								scrollwheel=true
+								gestureHandling="greedy"
+								disableDefaultUI=true as |g|}}
+								{{g.marker lat="41.247319" lng="-96.017368" draggable=false onClick=(action "launchMaps")}}
+							{{/g-map}}
+						</div>
+					</div>
 
-				<a href="https://www.facebook.com/nullifyuno" local-class="logo-text"><img src="/assets/images/facebook-logo.svg" alt="Facebook Logo" local-class="logo"> Find us on Facebook</a>
-				<a href="https://discord.gg/UgtFfPJ" local-class="logo-text"><img src="/assets/images/discord-logo.svg" alt="Discord Logo" local-class="logo"> Chat with us on Discord</a>
-				<br>
-				<h4>Sign up for our mailing list:</h4>
-				<div class="text-center mx-auto" local-class="mail-list">
-					{{ember-chimp 
-						formAction="https://facebook.us14.list-manage.com/subscribe/post?u=1726e9c446d4c144475450239&amp;id=2674501ba9"
-						placeholder="Email Address"
-						buttonText="Subscribe"
-						loadingText="Loading..."
-						responses=emberChimpResponses}}
-				</div>
+					<div class="col-md-6 text-center align-self-center">
+						<h1 class="mt-sm-3 mt-md-2">Contact Us</h1>
+
+						<p>Hello! We're glad you're reaching out, and are happy to answer <strong>any</strong> questions you may have!</p>
+						<p>The quickest way to reach us is on our official Discord server. However, you can also send us an <a href="mailto:nullify@unomaha.edu">email</a>, or come visit us in person in room 321 on meeting days! </p>
+
+						<a href="https://discord.gg/UgtFfPJ" local-class="logo-text"><img src="/assets/images/discord-button.png" alt="Discord Button" class="my-3" width="50%"></a>
+
+						<h4 class="mt-2">Join our email list!</h4>
+						<p>Sign up for our email list to stay up to date on the latest and greatest from NULLify.</p>
+						<div class="text-center mx-auto" local-class="mail-list">
+							{{ember-chimp 
+								formAction="https://facebook.us14.list-manage.com/subscribe/post?u=1726e9c446d4c144475450239&amp;id=2674501ba9"
+								placeholder="Email Address"
+								buttonText="Subscribe"
+								loadingText="Loading..."
+								responses=emberChimpResponses}}
+						</div>
+					</div>
+				</div>	
 			</div>
-			
-			
+
 			{{liquid-outlet}}
 		</div>
 	</div>
