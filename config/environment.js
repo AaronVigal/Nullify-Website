@@ -67,7 +67,7 @@ module.exports = function(environment) {
   }
 
 	if (environment === 'production') {
-		ENV.rootURL = '/UNO-NULLify.github.io';
+		ENV.rootURL = '/Nullify-Website';
 		ENV.locationType = 'hash';
 	}
 
