@@ -21,14 +21,11 @@ Router.map(function() {
     this.route('resources');
   });
   this.route('404', { path: '/*path' })
-  this.route('posts', function() {
-    this.route('view');
-  });
   this.route('contribute', function() {
     this.route('resource-name');
-	this.route('resource-url');
-	this.route('resource-tags');
-	this.route('resource-finish');
+    this.route('resource-url');
+    this.route('resource-tags');
+    this.route('resource-finish');
   });
 });
 

@@ -7,17 +7,19 @@
 		<img src="/assets/images/hsctf-logo.png" alt="HSCTF Logo" local-class="logo">
 
 
+		
+
+		{{#liquid-if showCountdownOne}}
 		<h1>Final Round - February 8th, 2020</h1>
 		<p>Join us on February 8th at Scott Conference Center on the University Nebraska Omaha campus. The doors open at
 			7:30 am
 			and the competition starts at 8 am. The competition will be scored and prizes will be distributed starting
 			at 2 pm.</p>
-
+		
 		<p>We have scored the placement round and have generated the following two brackets. You will be competing
 			against others in your bracket for prizes. Good luck and have fun!</p>
 
-		{{#liquid-if showCountdown}}
-		<div class="row justify-content-center mx-auto" local-class="left-side">
+		<div class="row justify-content-center mx-auto my-5" local-class="left-side">
 			<div class="col mb-3">
 				<div local-class="circle" class="rounded-circle mx-auto">
 					<h1 class="days mb-0" local-class="countdown">{{days}}</h1>
@@ -44,11 +46,44 @@
 			</div>
 		</div>
 		{{else}}
-		<h5 local-class="live">The 2019 annual HSCTF is now <strong>live</strong> at <a
-				href="https://play.nullify.uno">play.nullify.uno</a>!!!</h5>
+			{{#liquid-if showCountdownTwo}}
+				<h1>Final Round starts now!</h1>
+				<h5 local-class="live">The 2020 annual HSCTF is now <strong>live</strong>!!</h5>
+				Here are the links for the <a href="https://master.play.uno/">Master Server</a> and the <a href="https://trainer.play.uno/">Trainer Server</a>.<br>
+				<div class="row justify-content-center mx-auto my-5" local-class="left-side">
+					<div class="col mb-3">
+						<div local-class="circle" class="rounded-circle mx-auto">
+							<h1 class="days mb-0" local-class="countdown">{{days}}</h1>
+							<p>Days</p>
+						</div>
+					</div>
+					<div class="col mb-3">
+						<div local-class="circle" class="rounded-circle mx-auto">
+							<h1 class="hours mb-0" local-class="countdown">{{hours}}</h1>
+							<p>Hours</p>
+						</div>
+					</div>
+					<div class="col">
+						<div local-class="circle" class="rounded-circle mx-auto">
+							<h1 class="minutes mb-0" local-class="countdown">{{minutes}}</h1>
+							<p>Minutes</p>
+						</div>
+					</div>
+					<div class="col">
+						<div local-class="circle" class="rounded-circle mx-auto">
+							<h1 class="seconds mb-0" local-class="countdown">{{seconds}}</h1>
+							<p>Seconds</p>
+						</div>
+					</div>
+				</div>
+			{{else}}
+				<h1>Thank you for participating!</h1>
+				<p>We would like to thank all of the teams who participated in the 2020 HSCTF competition,<br> along with the UNO and High School staff who made this event possible!</p>
+			{{/liquid-if}}
 		{{/liquid-if}}
 
 	</div>
+
 
 	<div class="col-md h-100 d-table text-center" local-class="pokemon-right">
 		<div class="d-table-cell align-middle">
