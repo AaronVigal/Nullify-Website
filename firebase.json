@@ -1,6 +1,6 @@
 {
   "hosting": {
-	"firebase": "my-ember-cli-app",
+	"firebase": "Nullify-Website",
     "public": "dist",
     "ignore": [
       "firebase.json",

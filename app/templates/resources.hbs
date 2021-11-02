@@ -3,7 +3,7 @@
 	{{#matrix-container class="h-100 full-width fade-in"}}
 		<div class="container">
 			<div class="row">
-				<div class="col-md-12 justify-content-center pt-md-5 pt-3">
+				<div class="col-md-12 justify-content-center pt-md-5 pt-3 pb-3">
 					<h1 class="display-4 text-center fade-in mb-3">Resources</h1>
 					<div class="row justify-content-center mb-3">
 						<div class="col-md-8 col-12">
@@ -12,17 +12,11 @@
 								<span class="my-auto">{{fa-icon "search"}}</span>
 
 								{{input type="text" aria-label="Search" local-class="search" class="form-control my-0 py-1" placeholder="Search" value=search}}
-								<div class="align-middle" local-class="tags-section">
-									{{#each filterTags as |ft|}}
-									<span class="badge badge-pill badge-dark p-2 mx-1 float-right my-auto align-middle"
-										onclick={{action "removeTag" ft}}>{{fa-icon "times-circle"}}&nbsp;{{ft.name}}</span>
-									{{/each}}
-								</div>
 
 								{{!-- TODO: Add this back in once tag filtering works reliably --}}
 								{{!-- <div class="input-group-append">
 									<BsDropdown as |dd|>
-										<dd.button>Filter by Tags <span class="caret"></span></dd.button>
+										<dd.button>Filter by tags <span class="caret"></span></dd.button>
 										<dd.menu as |ddm|>
 											{{#each this.model.tags as |tag| }}
 												<ddm.item><a class="p-3" onclick={{action "addTag" tag}}>{{tag.name}}</a></ddm.item><br>
@@ -30,6 +24,12 @@
 										</dd.menu>
 									</BsDropdown>
 								</div> --}}
+							</div>
+							<div class="align-middle mt-3">
+								{{#each filterTags as |ft|}}
+									<h5><span class="badge badge-pill badge-dark p-2 mx-1 my-auto align-middle"
+										onclick={{action "removeTag" ft}}>{{fa-icon "times-circle"}}&nbsp;&nbsp;{{ft.name}}</span></h5>
+								{{/each}}
 							</div>
 						</div>
 					</div>
@@ -43,9 +43,9 @@
 										<span class="mb-0 align-middle text-white d-lg-none">{{resource.name}}</span>
 									</div>
 									<div class="col align-middle">
-										<a href={{resource.url}} role="button" class="btn btn-sm btn-primary float-right" onclick={{action "usedResource" resource}}><span class="align-middle">Visit &rarr;</span></a>
+										<a href={{resource.url}} target="_blank" rel="noopener" role="button" class="btn btn-sm btn-primary float-right" onclick={{action "usedResource" resource}}><span class="align-middle">Visit &rarr;</span></a>
 										{{#each resource.tags as |tag|}}
-											<span class="badge badge-pill badge-dark p-2 mx-1 float-right my-auto">{{tag.name}}</span>
+											<span class="badge badge-pill badge-dark p-2 mx-1 float-right my-auto">{{tag}}</span>
 										{{/each}}
 
 									</div>	

@@ -27,6 +27,9 @@ module.exports = function(defaults) {
             }
         }
 	},
+	'ember-date-components': {
+		'includeCSS': false
+	},
 	'esw-cache-fallback': {
 		patterns: [
 		  'https://firestore.googleapis.com/(.+)'

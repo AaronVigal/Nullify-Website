@@ -24,3 +24,41 @@ a.skip-main:active {
   font-size: 1.2em;
   z-index: 999;
 }
+
+.user-icon {
+	height: 3rem;
+}
+
+.wrap {
+	position: relative;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3rem;
+  width: 3rem;
+  opacity: 0;
+  transition: .25s ease;
+  background-color: #171717;
+  border-radius: 50% !important;
+}
+
+.wrap:hover .overlay {
+  opacity: 0.9;
+}
+
+.text {
+  color: white;
+  font-size: 0.85rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+}

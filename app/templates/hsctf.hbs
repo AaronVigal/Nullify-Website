@@ -1,112 +1,151 @@
-{{!-- <div class="container">
+<div local-class="background" class="h-100">
+<div class="container" oncontextmenu="return false">
 	<div class="row">
-		<div class="col-md-12"> --}}
-{{!-- TODO: Fix this height and fix the countdown column break --}}
-<div class="row h-100" local-class="main">
-	<div class="col-md text-center my-auto fade-in" local-class="display-t">
-		<img src="/assets/images/hsctf-logo.png" alt="HSCTF Logo" local-class="logo">
+		<div class="col-md-12 pt-5 slide-in-from-right">
+			<div class="row align-items-center d-flex justify-content-center h-100">
 
+				<div class="col-12 w-70 h-80 bg-light p-5" local-class="paper">
+					<br>
+					<h3 local-class="courier classified" class="black text-center mt-5 pb-2 d-none d-md-block"><strong>C L A S S I F I E D</strong></h3>
+					<h3 local-class="courier classified" class="black text-center mt-5 pb-2 d-lg-none"><strong>CLASSIFIED</strong></h3>
+					<hr local-class="hr">
+					<div class="row">
+						<div class="col-1">
+							<p local-class="courier black"><strong>MISSION: </strong></p>
+						</div>
+						<div class="col-11">
+							<p local-class="courier black">&nbsp;&nbsp;Operation HSCTF</p>
+						</div>
+					</div>
 
-		
+					<div class="row">
+						<div class="col-1">
+							<p local-class="courier black"><strong>OBJECTIVE: </strong></p>
+						</div>
+						<div class="col-11">
+							<p local-class="courier black">&nbsp;&nbsp;<span local-class="confidential" unselectable="on">Hack everything</span> and <span local-class="confidential" unselectable="on">submit the flags</span></p>
+						</div>
+					</div>
+					<hr local-class="hr">
+					<h1 class="text-center mt-2" local-class="stencil black">HSCTF2022</h1>
+					<h6 class="text-center mb-3" local-class="courier"><strong><u>MISSION DETAILS</u></strong></h6>
 
-		{{#liquid-if showCountdownOne}}
-		<h1>Final Round - February 8th, 2020</h1>
-		<p>Join us on February 8th at Scott Conference Center on the University Nebraska Omaha campus. The doors open at
-			7:30 am
-			and the competition starts at 8 am. The competition will be scored and prizes will be distributed starting
-			at 2 pm.</p>
-		
-		<p>We have scored the placement round and have generated the following two brackets. You will be competing
-			against others in your bracket for prizes. Good luck and have fun!</p>
+					<div class="row">
+						<div class="col-1">
+							<p local-class="courier">(U)</p>
+						</div>
+						<div class="col-11">
+							<p local-class="courier">The United States Board of NULLification (USBON) has seen fit to extend invitations to outside
+								agencies to coordinate for a Joint Operation CODENAME: <strong>HSCTF 2022</strong>. Agencies are advised to bring
+								all available agents to assist in operation efforts.</p>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-1">
+							<p local-class="courier">(C)</p>
+						</div>
+						<div class="col-11">
+							<p local-class="courier"><span local-class="confidential" unselectable="on">Xaawe xuwq kag'dq az kagd imk fa eaxhuzs eayq otmxxqzsqe msqzf. Wqqb bawuzs mdagzp mzp kag yustf ruzp m rxms...</span>
+							Outside participating agencies will be assisting in efforts remotely starting <strong>Saturday the 19th of February 2022</strong> and continuing to <strong>Sunday the 20th of February 2022</strong>. 
+							We will need all participating agencies to register by the <strong>30th of November, 2021</strong> to receive hardware*, or the <strong>8th of January, 2022</strong> to receive apparel.  
+							</p>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-1">
+							<p local-class="courier">(C)</p>
+						</div>
+						<div class="col-11">
+							<p local-class="courier">The operation format is a Jeopardy-Style capture the flag. Participating agents will pick challenges from a board arranged based on cybersecurity categories and difficulty level. 
+								<span local-class="confidential" unselectable="on">Vmtkb2NHTjVRbkJqZVVKNllqSXhiRWxIWkhaaU1sRm5ZMGhLYUZrelVuQlpNbFYxVEdrMFBRPT0=</span> Challenges are solved when a formatted text string called a "flag" is obtained and submitted. Solved challenges will award a dynamically adjusting number of points to the agent's team. The goal of the operation is to be the team of agents with the most points in the alloted amount of time.
+							</p>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-1">
+							<p local-class="courier">(U)</p>
+						</div>
+						<div class="col-11">
+							<p local-class="courier">All agents will recieve door prizes for participation in the competition. The First place team will receive a trophy, and the top three teams will receive additional prizes. All skill levels are welcome. There is no age or grade requirement. Participants must be students with a faculty sponsor for the team.</p>
+						</div>
+					</div>
 
-		<div class="row justify-content-center mx-auto my-5" local-class="left-side">
-			<div class="col mb-3">
-				<div local-class="circle" class="rounded-circle mx-auto">
-					<h1 class="days mb-0" local-class="countdown">{{days}}</h1>
-					<p>Days</p>
-				</div>
-			</div>
-			<div class="col mb-3">
-				<div local-class="circle" class="rounded-circle mx-auto">
-					<h1 class="hours mb-0" local-class="countdown">{{hours}}</h1>
-					<p>Hours</p>
-				</div>
-			</div>
-			<div class="col">
-				<div local-class="circle" class="rounded-circle mx-auto">
-					<h1 class="minutes mb-0" local-class="countdown">{{minutes}}</h1>
-					<p>Minutes</p>
-				</div>
-			</div>
-			<div class="col">
-				<div local-class="circle" class="rounded-circle mx-auto">
-					<h1 class="seconds mb-0" local-class="countdown">{{seconds}}</h1>
-					<p>Seconds</p>
+					<h5 local-class="courier" class="text-center mt-2 mb-3">If you choose to accept this mission, <br>please fill out the required information below:</h5>
+
+					<div class="row justify-content-center">
+						<div class="col-12 col-md-8">
+							<div class="input-group mb-3">
+								<div class="input-group-prepend">
+									<span class="input-group-text" local-class="courier input-group-header" id="school-name">Agency Name</span>
+								</div>
+								<Input type="text" local-class="courier input-group-field" class="form-control" placeholder="University of Nebraska at Omaha" aria-label="School Name"
+									aria-describedby="school-name" @value={{this.schoolName}} />
+							</div>
+
+							<div class="input-group mb-3">
+								<div class="input-group-prepend">
+									<span class="input-group-text" local-class="courier input-group-header" id="name">Sponsor Name</span>
+								</div>
+								<Input type="text" local-class="courier input-group-field" class="form-control" placeholder="Bill Mahoney" aria-label="Sponsor Name" aria-describedby="name"
+									@value={{this.sponsorName}} />
+							</div>
+
+							<div class="input-group mb-3">
+								<div class="input-group-prepend">
+									<span class="input-group-text" local-class="courier input-group-header" id="email">Contact Email</span>
+								</div>
+								<Input type="email" local-class="courier input-group-field" class="form-control" placeholder="sponsor@school.edu" aria-label="Contact Email"
+									aria-describedby="email" @value={{this.email}} />
+							</div>
+
+							<div class="input-group mb-3">
+								<div class="input-group-prepend">
+									<span class="input-group-text" local-class="courier input-group-header" id="participants">Expected Agents</span>
+								</div>
+								<Input type="number" local-class="courier input-group-field" class="form-control" placeholder="5" aria-label="Participants" aria-describedby="participants"
+									@value={{this.participants}} min="1" max="99" />
+							</div>
+
+							<div class="input-group mb-3">
+								<div class="input-group-prepend">
+									<span class="input-group-text" local-class="courier input-group-header" id="needHardwareText">Need Hardware?</span>
+								</div>
+								{{!-- <Input type="boolean" local-class="courier input-group-field" class="form-control" placeholder="5" 
+									@value={{this.needHardware}} min="1" max="99" /> --}}
+
+								<select onchange={{action (mut selectedHardware) value='target.value'}} id="needHardware" local-class="courier input-group-field" class="form-control" aria-label="needHardwareText" aria-describedby="needHardwareText">
+									<option value="false">No</option>
+									<option value="true">Yes</option>
+								</select>
+
+								{{!-- <select id="needHardware" local-class="courier input-group-field" class="form-control" aria-label="needHardwareText" aria-describedby="needHardwareText">
+									<option selected>Choose...</option>
+									<option>...</option>
+								</select> --}}
+							</div>
+
+							<div class="d-flex justify-content-end">
+								{{#if this.error}}
+									<p class="text-danger my-auto mr-3">{{this.errorText}}</p>
+								{{/if}}
+
+								{{#if this.submitted}}
+									<button class="btn btn-primary" local-class="submit-button-green" type="submit" disabled="true" {{action "submit"}}>Mission Accepted</button>
+								{{else}}
+									<button class="btn btn-primary" local-class="submit-button" type="submit" {{action "submit"}}>Accept Mission</button>
+								{{/if}}
+							</div>
+
+							
+						</div>
+					</div>
+					<div class="row mx-5 mt-5">
+						<p local-class="courier">*Hardware will be a single board computer like Raspberry Pi or Orange Pi. Only high-school teams are eligible to receive hardware.</p>
+					</div>
 				</div>
 			</div>
 		</div>
-		{{else}}
-			{{#liquid-if showCountdownTwo}}
-				<h1>Final Round starts now!</h1>
-				<h5 local-class="live">The 2020 annual HSCTF is now <strong>live</strong>!!</h5>
-				Here are the links for the <a href="https://master.play.uno/">Master Server</a> and the <a href="https://trainer.play.uno/">Trainer Server</a>.<br>
-				<div class="row justify-content-center mx-auto my-5" local-class="left-side">
-					<div class="col mb-3">
-						<div local-class="circle" class="rounded-circle mx-auto">
-							<h1 class="days mb-0" local-class="countdown">{{days}}</h1>
-							<p>Days</p>
-						</div>
-					</div>
-					<div class="col mb-3">
-						<div local-class="circle" class="rounded-circle mx-auto">
-							<h1 class="hours mb-0" local-class="countdown">{{hours}}</h1>
-							<p>Hours</p>
-						</div>
-					</div>
-					<div class="col">
-						<div local-class="circle" class="rounded-circle mx-auto">
-							<h1 class="minutes mb-0" local-class="countdown">{{minutes}}</h1>
-							<p>Minutes</p>
-						</div>
-					</div>
-					<div class="col">
-						<div local-class="circle" class="rounded-circle mx-auto">
-							<h1 class="seconds mb-0" local-class="countdown">{{seconds}}</h1>
-							<p>Seconds</p>
-						</div>
-					</div>
-				</div>
-			{{else}}
-				<h1>Thank you for participating!</h1>
-				<p>We would like to thank all of the teams who participated in the 2020 HSCTF competition,<br> along with the UNO and High School staff who made this event possible!</p>
-			{{/liquid-if}}
-		{{/liquid-if}}
-
 	</div>
-
-
-	<div class="col-md h-100 d-table text-center" local-class="pokemon-right">
-		<div class="d-table-cell align-middle">
-			<h1 class="display-4" local-class="outline"><strong>Pokemon Masters</strong></h1>
-
-			<h4 class="px-5" local-class="outline">
-				MillNorthOne — &lt;XSS&gt; — BogoBogoBogo Sort — The Bell Tower — Reference Variables — Turing Off —
-				MillNorthTwo
-			</h4>
-
-			<hr class="my-5">
-
-			<h1 class="display-4" local-class="outline"><strong>Pokemon Trainers</strong></h1>
-
-			<h4 class="px-5" local-class="outline">
-				Over The River — Elite Six — LSW A — CyberJays — 100% That Bit — LSE 3 — Central Purple — LifeHackers —
-				LSW B — East White — East Blue — Omaha Central Eagles
-			</h4>
-		</div>
-	</div>
-
 </div>
-{{!-- </div>
-	</div>
-</div> --}}
+</div>
 {{liquid-outlet}}

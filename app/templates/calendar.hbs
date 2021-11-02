@@ -2,35 +2,39 @@
 	<div class="row">
 		<div class="col-md-12 mt-5">
 			<h2 class="display-4 text-center fade-in mb-4">📅 Calendar</h2>
-			{{#if this.model.upcomingMeetings}}
+			{{#if this.model.nextMeeting}}
 				<h3 class="display-6 font-weight-light">Next Meeting</h3>
 				<div class="card p-3 my-3 fade-in">
 					{{highlight-js code=this.model.nextMeeting.str lang="json" hasLineNumbers=false local-class="code"}}
-					<a href={{this.model.nextMeeting.url}} target="_blank" rel="noopener" type="button" class="btn btn-lg btn-light" local-class="button">{{fa-icon "calendar"}}</a>
+					
+					{{!-- TODO: Reenable this --}}
+					{{!-- <a href={{this.model.nextMeeting.url}} target="_blank" rel="noopener" type="button" class="btn btn-lg btn-dark" local-class="button">{{fa-icon "calendar"}}</a> --}}
+					<LinkTo @route="meeting" class="btn btn-primary" local-class="info-button" @model={{this.model.nextMeeting.id}}>View Meeting</LinkTo>
+					{{!-- TODO: Change this to the meeting route --}}
 				</div>
 
-				<h3 class="display-6 pt-lg-3 font-weight-light">Upcoming Meetings</h3>
-				
-				{{!-- {{#each (sort-by "date" upcoming-meetings) as |meeting|}} --}}
-				{{#each this.model.upcomingMeetings as |meeting|}} 
-					<div class="card p-3 my-3 fade-in">
-						{{highlight-js code=meeting.str lang="json" hasLineNumbers=false local-class="code"}}
-						<a href={{meeting.url}} target="_blank" rel="noopener" type="button" class="btn btn-lg btn-light" local-class="button">{{fa-icon "calendar"}}</a>
-					</div>
-				{{/each}}
+				{{#if this.model.upcomingMeetings}}
+					<h3 class="display-6 pt-lg-3 font-weight-light">Upcoming Meetings</h3>
+					
+					{{!-- {{#each (sort-by "date" upcoming-meetings) as |meeting|}} --}}
+					{{#each this.model.upcomingMeetings as |meeting|}} 
+						<div class="card p-3 my-3 fade-in">
+							{{highlight-js code=meeting.str lang="json" hasLineNumbers=false local-class="code"}}
+
+							 {{!-- TODO: Reenable this --}}
+							{{!-- <a href={{meeting.url}} target="_blank" rel="noopener" type="button" class="btn btn-lg btn-dark" local-class="button">{{fa-icon "calendar"}}</a> --}}
+							<LinkTo @route="meeting" class="btn btn-primary" local-class="info-button" @model={{meeting.id}}>View Meeting</LinkTo> 
+						</div>
+					{{/each}}
+				{{/if}}
 
 			{{else}}
 				<div class="card p-3 mt-5 fade-in text-center">
-					<p style="margin-top: 1rem;">Due to the recent events that have been taken place and for the safety of our club members,<br>
-					All in-person NULLify meetings have been canceled for the rest of the semester.<br>
-					As a club, we are exploring options as to how we can meet remotely. We will notify you if a decision is made.<br>
-					Since classes are going to be remote, Don't hesitate to reach out to any of the officers for help!<br>
-					We are here to help and provide resources for our members.<br><br>
-					Stay safe and be careful!</p>
+					<p local-class="alt-text">There are currently no meetings scheduled. Check back later or check out our <a href="https://discord.gg/UgtFfPJ" target="_blank" rel="noopener">Discord</a> for notifications and updates about meetings!</p>
 				</div>
 			{{/if}}
 			<hr class="mt-5">
-			<p class="text-muted text-center">Want these events to sync directly to your Google or Apple calendar?<br><a href={{this.model.sharableURL}} target="_blank" rel="noopener">Click Here</a> to add it to your calendar.</p>
+			<p class="text-muted text-center">Want these events to sync directly to your Google or Apple calendar?<br><a href="https://calendar.google.com/calendar?cid=YWJwODdqcDFibjN2b2p2NXU2ajFkbjE4aHNAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ" target="_blank" rel="noopener">Click Here</a> to add it to your calendar.</p>
 		</div>
 	</div>
 </div>

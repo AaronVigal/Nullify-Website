@@ -1,11 +1,11 @@
 {{!-- Skip Link because I'm extra --}}
 <a local-class="skip-main" href="#content">Skip to main content</a>
 
-<BsNavbar class="navbar navbar-expand-lg navbar-light bg-light" as |navbar|>
+<BsNavbar class="navbar navbar-expand-lg navbar-dark bg-dark" as |navbar|>
 	<div class="container">
 		{{!--  Show this only on mobile to medium screens  --}}
 		<div class="d-flex flex-row justify-content-between w-100 d-lg-none">
-			{{#if session.isAuthenticated}}
+			{{#if user.admin}}
 				{{#link-to "admin.index" class="navbar-brand d-lg-none d-inline-flex slide-in-from-top"}}
 					<img src="/assets/images/nullify_banner.svg" alt="Nullify Banner" width="50%">
 				{{/link-to}}
@@ -19,22 +19,22 @@
 
 		<navbar.content class="justify-content-between">
 			<navbar.nav class="d-flex flex-row justify-content-center slide-in-from-left" as |nav|>
-				<nav.item class="mx-2 mx-lg-0">
+				<nav.item class="mx-2 mx-lg-0 my-auto">
 					<nav.linkTo @route="index">Home</nav.linkTo>
 				</nav.item>
-				<nav.item class="mx-2 mx-lg-0">
+				<nav.item class="mx-2 mx-lg-0 my-auto">
 					<nav.linkTo @route="about">About</nav.linkTo>
 				</nav.item>
-				<nav.item class="mx-2 mx-lg-0">
+				<nav.item class="mx-2 mx-lg-0 my-auto">
 					<nav.linkTo @route="calendar">Calendar</nav.linkTo>
 				</nav.item>
-				{{!-- <nav.item>
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-				</nav.item> --}}
+				<nav.item class="mx-2 mx-lg-0 my-auto">
+					<nav.linkTo @route="contact">Contact Us</nav.linkTo>
+				</nav.item>
 			</navbar.nav>
 
 			{{!--  Show this only on large and up screens  --}}
-			{{#if session.isAuthenticated}}
+			{{#if user.admin}}
 				{{#link-to "admin.index" class="navbar-brand d-none d-lg-block text-center mx-auto"}}
 					<img src="/assets/images/nullify_banner.svg" class="img-fluid slide-in-from-top" alt="Nullify Banner" width="60%">
 				{{/link-to}}
@@ -45,18 +45,34 @@
 			{{/if}}
 
 			<navbar.nav class="d-flex flex-row justify-content-center slide-in-from-right" as |nav|>
-				<nav.item class="mx-2 mx-lg-0">
-					<nav.linkTo @route="contact">Contact Us</nav.linkTo>
-				</nav.item>
-				<nav.item class="mx-2 mx-lg-0">
+				<nav.item class="mx-2 mx-lg-0 my-auto">
 					<nav.linkTo @route="resources">Resources</nav.linkTo>
 				</nav.item>
-				<nav.item class="mx-2 mx-lg-0">
+				<nav.item class="mx-2 mx-lg-0 my-auto">
 					<nav.linkTo @route="hsctf">HSCTF</nav.linkTo>
 				</nav.item>
-				<nav.item class="mx-2 mx-lg-0">
+				<nav.item class="mx-2 mx-lg-0 my-auto">
 					<nav.linkTo @route="sponsors">Sponsors</nav.linkTo>
 				</nav.item>
+				{{#if session.isAuthenticated}}
+					{{!-- TODO: Make the photo only show on large screens --}}
+					<nav.item class="mx-2 mx-lg-0 my-auto pl-3">
+						<div local-class="wrap">
+
+						
+							<img src={{session.data.authenticated.user.photoURL}} class="rounded-circle" local-class="user-icon" alt="Profile Picture">
+							<div local-class="overlay">
+								<div local-class="text"><a href="" onclick={{action "logout"}}>Logout</a></div>
+							</div>
+						</div>
+					</nav.item>
+				{{else}}
+					<nav.item class="mx-2 mx-lg-0 my-auto pl-2">
+						{{!-- <nav.linkTo @route="contact">Contact Us</nav.linkTo> --}}
+						<button type="button" class="btn btn-primary btn-sm" {{action "login"}}>Login</button>
+					</nav.item>
+				{{/if}}
+				
 			</navbar.nav>
 		</navbar.content>
 	</div>

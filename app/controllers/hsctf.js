@@ -1,49 +1,45 @@
 import Controller from '@ember/controller';
-import { inject as service } from '@ember/service';
 
 export default Controller.extend({
-	moment: service(),
 
-	days: 0,
-	hours: 0,
-	minutes: 0,
-	seconds: 0,
+	schoolName: '',
+	sponsorName: '',
+	email: '',
+	participants: '',
 
-	showCountdownOne: true,
-	showCountdownTwo: false,
+	submitted: false,
+	error: false,
+	errorText: '',
 
+	needHardwareOptions: ['No', 'Yes'],
+	selectedHardware: 'false',
 
-	startCountdown() {
-		let controller = this;
-		let moment = controller.get('moment');
-		// Day month year
-		let countDownDate = moment.moment('2020-02-08 14:00:00');
-		var x = setInterval(function () {
-			let diff = countDownDate.diff(moment.moment());			
-			if (diff <= 0) {
-				clearInterval(x);
-				controller.set('showCountdownOne', false);
-				controller.set('showCountdownTwo', true);
-
-				// Moment is 6 hours behind
-				let countDownDateTwo = moment.moment('2020-02-08 16:00:00');
-				// let countDownDateTwo = countDownDate.clone().add(6, 'hour'); 
-				let diff2 = countDownDateTwo.diff(moment.moment());	
-				if (diff <= 0) {
-					clearInterval(x);
-					controller.set('showCountdownTwo', false);
-				} else {				
-					controller.set('days', countDownDateTwo.diff(moment.moment(), 'days'));
-					controller.set('hours', moment.moment(diff2).format("HH"));
-					controller.set('minutes', moment.moment(diff2).format("mm"));
-					controller.set('seconds', moment.moment(diff2).format("ss"));
-				}
+	actions: {
+		submit() {
+			if(this.schoolName && this.sponsorName && this.email && this.participants){
+				let needsHardware = this.selectedHardware === 'true';
+				let submission = this.store.createRecord('hsctf-submission', {
+					schoolName: this.schoolName,
+					sponsorName: this.sponsorName,
+					email: this.email,
+					participants: this.participants,
+					needHardware: needsHardware,
+				});
+				submission.save().then((result) => {
+					if(result.isError){
+						this.set('error', true);
+						this.set('errorText', "There was an error submitting your information. Please try again later, or send us an email at nullify@unomaha.edu");
+						this.set('submitted', false);
+					} else {
+						this.set('error', false);
+						this.set('submitted', true);
+					}
+				});
+				
 			} else {
-				controller.set('days', countDownDate.diff(moment.moment(), 'days'));
-				controller.set('hours', moment.moment(diff).format("HH"));
-				controller.set('minutes', moment.moment(diff).format("mm"));
-				controller.set('seconds', moment.moment(diff).format("ss"));
+				this.set('errorText', 'Please fill out all of the required fields before accepting the mission.');
+				this.set('error', true);
 			}
-		}, 1000);
+		}
 	}
 });

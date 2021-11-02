@@ -16,7 +16,7 @@ export default Controller.extend({
 		// TODO: Filter by tag
 
 		if (isEmpty(search)) { 
-			return resources.sortBy('uses').reverse(); 
+			return resources.sortBy('uses'); 
 		}
 
 		return resources.filter(function (resources) {

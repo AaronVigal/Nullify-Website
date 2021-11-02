@@ -1,0 +1,86 @@
+.leftside, .rightside {
+	height: 50vh;
+	width: 100%;
+}
+
+@media screen and (min-width: 768px) {
+	.leftside, .rightside {
+		height: 100vh;
+	}
+}
+
+.pokemon-right {
+  background-image: url('/assets/images/pokemonblur.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.outline {
+	text-shadow: -1px -1px 0 #000,
+				1px -1px 0 #000,
+				-1px 1px 0 #000,
+				1px 1px 0 #000;
+}
+
+.display-t {
+  color: white;
+}
+
+.display-t h1 {
+  margin-bottom: 20px;
+  font-size: 40px;
+  line-height: 1.5;
+  font-family: "Space Mono", Arial, serif;
+  font-weight: 300;
+}
+
+.display-t h6 {
+  font-family: "Space Mono", Arial, serif;
+}
+
+.circle {
+  background-color: #4F4F51;
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+}
+
+#countdown p {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 2rem;
+}
+
+#countdown .canvas-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  max-width: 440px;
+  margin: 0 auto;
+}
+
+@media (max-width:500px) {
+  #countdown .canvas-container {
+    max-width: 220px;
+  }
+
+  #countdown canvas:nth-child(-n+2) {
+    margin-bottom: 10px;
+  }
+}
+
+.logo {
+	width: 20vw;
+	min-width: 300px;
+	margin-bottom: 30px;
+}
+
+.countdown {
+	padding-top: 15px;
+}
+
+.live {
+	margin-top: 50px;
+}

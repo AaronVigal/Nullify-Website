@@ -14,13 +14,18 @@ module.exports = function (/* environment, appConfig */) {
 		theme_color: "#303030",
 		icons: [
 			{
-				src: "/public/assets/images/nullify_lock.png",
-				sizes: "117x164",
+				src: "/assets/images/lock-192.png",
+				sizes: "192x192",
+				type: "image/png"
+			},
+			{
+				src: "/assets/images/lock-512.png",
+				sizes: "512x512",
 				type: "image/png"
 			}
 		],
 		ms: {
-			tileColor: '#fff'
+			tileColor: '#303030'
 		}
 	};
 }

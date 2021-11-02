@@ -14,6 +14,9 @@
 	<link rel="manifest" href="{{rootURL}}manifest.webmanifest" />
 	<meta name="msapplication-config" content="{{rootURL}}browserconfig.xml" />
 
+	<!-- This is for the zoom iframe -->
+	<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+
     {{content-for "head-footer"}}
   </head>
   <body>

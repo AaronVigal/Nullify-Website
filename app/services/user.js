@@ -1,48 +1,40 @@
 import Service from '@ember/service';
 import { inject as service } from '@ember/service';
+import firebase from 'firebase/app';
 
 export default Service.extend({
 	session: service(),
 	firebaseApp: service(),
-	store: service('store'),
-	router: service(),
-
-	// Field Data
-	email: '',
-	password: '',
-	errorMessage: '',
-
-	// Stored Data
-	user: null,
-
-	init() {
-		this._super(...arguments);
-
-		const service = this;
-
-		// Reset field data
-		service.set('errorMessage', null);
-		service.set('email', null);
-		service.set('password', null);
-	},
+	store: service(),
+	admin: false,
 
 	async login() {
-
-		const service = this;
-
-		var email = this.get('email');
-		var password = this.get('password');
 		const auth = await this.get('firebaseApp').auth();
-
-		auth.signInWithEmailAndPassword(email, password).catch((error) => {
-			service.set('errorMessage', error.message);
-		}).then(() => {
-			service.get('router').transitionTo('admin.index');
-		});
-
+		const provider = new firebase.auth.GoogleAuthProvider();
+		return auth.signInWithPopup(provider).then((user) => {
+			this.store.findRecord('officer', user.user.uid)
+			.then(() => {
+				this.set('admin', true);
+			}).catch(() => {
+				// Not admin
+				console.log("Successfully Signed In")
+			});
+		})
 	},
 
 	logout() {
-		this.get('session').invalidate();
+		this.set('admin', false);
+		return this.get('session').invalidate();
 	},
+
+	// TODO: This might be causing the logo to not show up
+	init() {
+		this._super();
+		if(this.get('session').isAuthenticated){
+			this.store.findRecord('officer', this.get('session').data.authenticated.user.uid)
+			.then(() => {
+				this.set('admin', true);
+			}).catch(() => {});
+		}
+	}
 });

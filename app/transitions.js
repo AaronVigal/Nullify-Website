@@ -307,7 +307,7 @@ export default function(){
 		this.reverse('toRight')
 	);
 
-	// HSCTF starting transitions ------------------------------------------------------
+	// hsctf starting transitions ------------------------------------------------------
 	this.transition(
 		this.fromRoute('hsctf'),
 		this.toRoute('index'),

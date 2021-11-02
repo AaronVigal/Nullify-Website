@@ -1,7 +1,9 @@
 import Controller from '@ember/controller';
-import $ from 'jquery';
+import { inject as service } from '@ember/service';
 
 export default Controller.extend({
+	router: service(),
+	user: service(),
 	init() {
 		this._super(...arguments);
 		window.addEventListener('beforeinstallprompt', (e) => {
@@ -20,4 +22,5 @@ export default Controller.extend({
 			// });
 		});
 	},
+	isResourcesRoute: Ember.computed.equal('router.currentRouteName', 'resources')
 });

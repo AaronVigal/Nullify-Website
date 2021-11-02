@@ -1,86 +1,99 @@
-.leftside, .rightside {
-	height: 50vh;
-	width: 100%;
+@font-face {
+  font-family: 'Stencil Regular';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Stencil Regular'), url('/assets/fonts/STENCIL.woff') format('woff');
 }
 
-@media screen and (min-width: 768px) {
-	.leftside, .rightside {
-		height: 100vh;
+.courier {
+	font-family: "Courier New", Courier, "Lucida Sans Typewriter", "Lucida Typewriter", monospace;
+	font-style: normal;
+	font-variant: normal;
+	color: #000000;
+	// font-weight: 700;
+	// line-height: 26.4px;
+}
+
+.stencil {
+	font-family: 'Stencil Regular';
+}
+
+.background {
+	background-image: url("/assets/images/wood.jpg");
+	background-position: center;
+	background-size: cover;
+}
+
+@media (min-width: 768px) {
+	.paper {
+		background-image: url("/assets/images/paper.png");
+		background-color: #FFFFEE;
+		background-position: right top;
+		background-size: cover;
 	}
 }
 
-.pokemon-right {
-  background-image: url('/assets/images/pokemonblur.jpg');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+@media (max-width: 767px) {
+  	.paper {
+		background-image: url("/assets/images/paper-plain.png");
+		background-color: #FFFFEE;
+		background-position: right top;
+		background-size: cover;
+	}
 }
 
-.outline {
-	text-shadow: -1px -1px 0 #000,
-				1px -1px 0 #000,
-				-1px 1px 0 #000,
-				1px 1px 0 #000;
+.hr {
+  background-color: #000000;
+  border: 1px solid black;
+  border-radius: 7px 7px 7px 7px;
 }
 
-.display-t {
-  color: white;
+.black {
+	color: #000000 !important;
 }
 
-.display-t h1 {
-  margin-bottom: 20px;
-  font-size: 40px;
-  line-height: 1.5;
-  font-family: "Space Mono", Arial, serif;
-  font-weight: 300;
+.confidential {
+	color: #000000 !important;
+	background-color: #000000 !important;
+	-webkit-user-select: none; /* Safari */
+	-moz-user-select: none; /* Firefox */
+	-ms-user-select: none; /* IE10+/Edge */
+	user-select: none; /* Standard */
+	word-wrap: break-word;
 }
 
-.display-t h6 {
-  font-family: "Space Mono", Arial, serif;
+.input-group-header{
+	background: rgba(0, 0, 0, 0) !important;
+	border: none !important;
+	border-bottom: 1px solid #000000 !important;
+	border-radius: 0px !important;
 }
 
-.circle {
-  background-color: #4F4F51;
-  border-radius: 50%;
-  width: 120px;
-  height: 120px;
+.input-group-field {
+	background: rgba(0, 0, 0, 0) !important;
+	border: none !important;
+	border-bottom: 1px solid #000000 !important;
+	border-radius: 0px !important;
+	color: #000000 !important;
 }
 
-#countdown p {
-  text-align: center;
-  margin-bottom: 30px;
-  font-size: 2rem;
+.submit-button {
+	background: rgba(0, 0, 0, 0) !important;
+	border: 1px solid #000000 !important;
+	border-radius: 0px !important;
+	color: #000000 !important;
 }
 
-#countdown .canvas-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: flex-start;
-  max-width: 440px;
-  margin: 0 auto;
+.submit-button:hover {
+  background: rgba(0, 0, 0, 1) !important;
+  border: 1px solid #000000 !important;
+  border-radius: 0px !important;
+  color: #FFFFFF !important;
 }
 
-@media (max-width:500px) {
-  #countdown .canvas-container {
-    max-width: 220px;
-  }
-
-  #countdown canvas:nth-child(-n+2) {
-    margin-bottom: 10px;
-  }
-}
-
-.logo {
-	width: 20vw;
-	min-width: 300px;
-	margin-bottom: 30px;
-}
-
-.countdown {
-	padding-top: 15px;
-}
-
-.live {
-	margin-top: 50px;
+.submit-button-green {
+  background: #27963C !important;
+  border: 1px solid #000000 !important;
+  border-radius: 0px !important;
+  color: #000000 !important;
 }

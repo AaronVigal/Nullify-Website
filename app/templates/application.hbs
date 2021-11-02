@@ -1,5 +1,8 @@
 {{navbar}}
 <div local-class="content" id="content">
 	{{liquid-outlet class="h-100"}}
-	{{footer}}
+
+	{{#unless isResourcesRoute}}
+		{{footer}}
+	{{/unless}}
 </div>

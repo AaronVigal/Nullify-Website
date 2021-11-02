@@ -42,11 +42,11 @@ module.exports = function(environment) {
     // ENV.APP.LOG_ACTIVE_GENERATION = true;
     // ENV.APP.LOG_TRANSITIONS = true;
     // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
-    // ENV.APP.LOG_VIEW_LOOKUPS = true;
+	// ENV.APP.LOG_VIEW_LOOKUPS = true;
   }
 
   ENV['ember-google-maps'] = {
-	key: 'AIzaSyAvN2XmFV_7rZ6EiKYNxppsnr9u05urIiw',
+	key: 'AIzaSyCyRhD7MOmKZhfNgwnaQJpG0zbqNvi9ub0',
 	language: 'en',
 	region: 'US',
 	protocol: 'https',
